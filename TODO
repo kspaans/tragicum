@@ -1,0 +1,4 @@
+[_] model loader that takes a series of triangles (from say Blender) instead of
+    the static 'draw_cube()'
+   [_] parse the OBJ (Wavefront) format
+   [_] load the data into a GL buffer(?) and display it
