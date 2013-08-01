@@ -2,3 +2,4 @@
     the static 'draw_cube()'
    [_] parse the OBJ (Wavefront) format
    [_] load the data into a GL buffer(?) and display it
+   [_] figure out what kind of faces I want to support (triangles, quads?)

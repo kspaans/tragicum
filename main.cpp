@@ -1,5 +1,6 @@
 #include <GL/glfw.h>
 #include <math.h>
+#include "obj_parse.h"
 
 #define WIDTH  640
 #define HEIGHT 480
@@ -51,7 +52,7 @@ void draw_cube() {
   glEnd();
 }
 
-int main() {
+int main(int argc, char** argv) {
   glfwInit();
   glfwOpenWindow(WIDTH, HEIGHT, 8, 8, 8, 8, 32, 0, GLFW_WINDOW);
 
@@ -66,6 +67,16 @@ int main() {
   glLoadIdentity();
   gluPerspective(90.0, (float)WIDTH/(float)HEIGHT, 0.1, 10.0);
   glMatrixMode(GL_MODELVIEW);
+
+  if (argv[1]) {
+    obj_model m(argv[1]);
+
+    std::cout << "size is " << m.v.size() << std::endl;
+    std::cout << "Vertex is " << m.v[0].a << "," << m.v[0].b << "," << m.v[0].c
+      << std::endl;
+    std::cout << "Vertex2is " << m.v[1].a << "," << m.v[1].b << "," << m.v[1].c
+      << std::endl;
+  }
 
   int running = 1;
   int jumping = 0;
