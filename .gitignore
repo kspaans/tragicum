@@ -1,3 +1,7 @@
 Tragicum
 *.o
 *.d
+
+gtest_main.a
+maint
+objt

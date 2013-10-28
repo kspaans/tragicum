@@ -6,18 +6,18 @@ obj_model::obj_model(char *filename) {
 	std::string token;
 
 	if (!inf) {
-		std::cout << "Couldn't open file \"" << filename << "\""
-			<< std::endl;
+		//std::cout << "Couldn't open file \"" << filename << "\""
+		//	<< std::endl;
 		return;
 	} else {
-		std::cout << "Opened file \"" << filename  << "\"" <<
-			std::endl;
+		//std::cout << "Opened file \"" << filename  << "\"" <<
+		//	std::endl;
 	}
 
 	// TODO Boost::coroutine for parsing?
 	while (inf) {
 		inf >> token;
-		std::cout << "Found a token '" << token << "'" << std::endl;
+		//std::cout << "Found a token '" << token << "'" << std::endl;
 
 		if (0 == token.compare("#")) {
 			std::getline(inf, token);
