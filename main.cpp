@@ -21,6 +21,7 @@ void draw_cube() {
   glVertex3f(0.5, -0.5, 0.5); // 5
   glVertex3f(-0.5, -0.5, 0.5); // 4
 
+#if 0
   // Bottom
   glColor3f(0.0, 0.0, 1.0);
   glVertex3f(-0.5, -0.5, 0.5);
@@ -48,6 +49,7 @@ void draw_cube() {
   glVertex3f(0.5, 0.5, 0.5); // 2
   glVertex3f(0.5, -0.5, 0.5);
   glVertex3f(0.5, -0.5, -0.5);
+#endif
 
   glEnd();
 }
