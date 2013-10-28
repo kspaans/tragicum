@@ -23,12 +23,20 @@ struct normal {
 	float c;
 };
 
+// Using Quads
+struct face {
+	int vtxes[4];
+};
+
 struct obj_model {
 	std::vector<vertex> v;
 	std::vector<uv>     u;
 	std::vector<normal> n;
+	std::vector<face>   f;
 
 	obj_model(char *filename);
 };
+
+void draw_object(const obj_model &o);
 
 #endif

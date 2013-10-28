@@ -21,7 +21,6 @@ void draw_cube() {
   glVertex3f(0.5, -0.5, 0.5); // 5
   glVertex3f(-0.5, -0.5, 0.5); // 4
 
-#if 0
   // Bottom
   glColor3f(0.0, 0.0, 1.0);
   glVertex3f(-0.5, -0.5, 0.5);
@@ -49,7 +48,6 @@ void draw_cube() {
   glVertex3f(0.5, 0.5, 0.5); // 2
   glVertex3f(0.5, -0.5, 0.5);
   glVertex3f(0.5, -0.5, -0.5);
-#endif
 
   glEnd();
 }
@@ -70,8 +68,8 @@ int main(int argc, char** argv) {
   gluPerspective(90.0, (float)WIDTH/(float)HEIGHT, 0.1, 10.0);
   glMatrixMode(GL_MODELVIEW);
 
-  if (argv[1]) {
-    obj_model m(argv[1]);
+  obj_model m(argv[1]);
+  if (argc > 1 && argv[1]) {
 
     std::cout << "size is " << m.v.size() << std::endl;
     std::cout << "Vertex is " << m.v[0].a << "," << m.v[0].b << "," << m.v[0].c
@@ -152,7 +150,8 @@ int main(int argc, char** argv) {
     glRotatef(rotX, 1, 0, 0);
 
     // Draw!
-    draw_cube();
+    ////draw_cube();
+    draw_object(m);
 
     glfwSwapBuffers();
     running = !glfwGetKey(GLFW_KEY_ESC) && glfwGetWindowParam(GLFW_OPENED);

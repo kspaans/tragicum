@@ -55,5 +55,20 @@ obj_model::obj_model(char *filename) {
 			};
 			obj_model::n.push_back(n);
 		}
+
+		if (0 == token.compare("f")) {
+			// for now this just grabs the vertex number and ignores
+			// everything else
+			std::string v2, v3, v4;
+			inf >> token;
+			inf >> v2;
+			inf >> v3;
+			inf >> v4;
+			face f = {
+				std::stoi(token), std::stoi(v2), std::stoi(v3),
+				std::stoi(v4)
+			};
+			obj_model::f.push_back(f);
+		}
 	}
 }

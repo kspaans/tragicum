@@ -12,7 +12,7 @@ GTEST_SRCS_ = $(GTEST_DIR)/src/*.cc $(GTEST_DIR)/src/*.h $(GTEST_HEADERS)
 TESTS = objt maint
 
 EXEC=Tragicum
-OBJS=main.o obj_parse.o
+OBJS=main.o obj_parse.o obj_draw.o
 DEPS=${OBJS:.o=.d}
 
 ${EXEC}: ${OBJS}

@@ -38,3 +38,10 @@ v 1.2 3.1 5.7
 vt 0.9 2.8
 vn 45.0 46.0 47.0
 #endif
+
+TEST(objectTest, jakecube)
+{
+	obj_model m("tests/obj/cube.obj");
+
+	EXPECT_EQ(m.v.size(), 10);
+}
